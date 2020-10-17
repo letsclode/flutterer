@@ -2,6 +2,8 @@
 
 * <a href="#banner">Appbar</a>
 * <a href="#bottom_appbar">Bottom App Bar</a>
+* <a href="#bottom_navigation">Bottom Navigation</a>
+* <a href="#bottom_sheet">Bottom Sheet</a>
 * <a href="#buttons">Buttons</a>
 * <a href="#cards">Cards</a>
 * <a href="#chips">Chips</a>
