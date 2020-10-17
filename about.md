@@ -1,12 +1,21 @@
-# Now I get it
-this how it work you can link by not adding md at the last name of fi
-le
+# List Of Widgets
 
-Go to [App Bar](https://letsclode.github.io/flutterer/about.md=#:~:text=AppBar)
+* <a href="#banner">Appbar</a>
+* <a href="#bottom_appbar">Bottom App Bar</a>
+* <a href="#buttons">Buttons</a>
+* <a href="#cards">Cards</a>
+* <a href="#chips">Chips</a>
+* <a href="#data_tables">Data_tables</a>
+* <a href="#dialogs">Dialogs</a>
+* <a href="#gridlist">Gridlist</a>
+* <a href="#list">List</a>
+* <a href="#menu">Menu</a>
+* <a href="#pickers">Pickers</a>
+* <a href="#progress_indicators">Progress_indicators</a>
+* <a href="#selection_controls">Selection_controls</a>
 
-go to banner [App Bar](#appbar)
-<a href="#appbar">Appbar 2</a>
-# Banner
+<h1 id="banner">Banner</h1>
+
 ```
 // Copyright 2020 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -132,9 +141,8 @@ class _BannerDemoState extends State<BannerDemo> {
   }
 }
 ```
-<h1 id="appbar">App Bar</h1>
-# App bar 
-
+<h1 id="bottom_appbar">App Bar</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -302,9 +310,9 @@ class _DemoBottomAppBar extends StatelessWidget {
     );
   }
 }
-
-#Bottom navigation
-
+```
+<h1 id="bottom_navigation">Bottom navigation</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -463,8 +471,9 @@ class _NavigationDestinationView extends StatelessWidget {
     );
   }
 }
-
-#bottom sheet
+```
+<h1 id="bottom_sheet">Bottom Sheet</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -557,8 +566,9 @@ class _PersistentBottomSheetDemoState
     );
   }
 }
-
-#butons
+```
+<h1 id="buttons">Butons</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -589,8 +599,9 @@ class _FlatButtonDemo extends StatelessWidget {
     );
   }
 }
-
-#cards
+```
+<h1 id="cards">Cards</h1>
+```
 // Copyright 2020 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -999,8 +1010,9 @@ class _CardsDemoState extends State<CardsDemo> {
     );
   }
 }
-
-#chips
+```
+<h1 id="chips">Chips</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1023,8 +1035,9 @@ class _ActionChipDemo extends StatelessWidget {
     );
   }
 }
-
-#data tables
+```
+<h1 id="data_tables">Data tables</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1575,15 +1588,14 @@ class _DessertDataSource extends DataTableSource {
     notifyListeners();
   }
 }
-
-#dialogs
-
+```
+<h1 id="dialogs">Dialogs</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
 import 'package:gallery/data/gallery_options.dart';
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 
@@ -1859,8 +1871,9 @@ class _FullScreenDialogDemo extends StatelessWidget {
     );
   }
 }
-
-#gridlist
+```
+<h1 id="gridlist">Gridlist</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2056,14 +2069,14 @@ class _GridDemoPhotoItem extends StatelessWidget {
     return null;
   }
 }
-
-#list
+```
+<h1 id="list">List</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 
 enum ListDemoType {
@@ -2105,14 +2118,14 @@ class ListDemo extends StatelessWidget {
     );
   }
 }
-
-#menu
+```
+<h1 id="menu">Menu</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 
 // Pressing the PopupMenuButton on the right of this item shows
@@ -2158,13 +2171,14 @@ class _ContextMenuDemo extends StatelessWidget {
     );
   }
 }
-#pickers
+```
+<h1 id="pickers">Pickers</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:intl/intl.dart';
@@ -2267,8 +2281,9 @@ class _PickerDemoState extends State<PickerDemo> {
     );
   }
 }
-
-#progress indicators
+```
+<h1 id="progress_indicators">Progress Indicators</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2379,8 +2394,9 @@ class _ProgressIndicatorDemoState extends State<ProgressIndicatorDemo>
     );
   }
 }
-
-#selection controls
+```
+<h1 id="selection_controls">Selection controls</h1>
+```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2435,6 +2451,9 @@ class _CheckboxDemoState extends State<_CheckboxDemo> {
     );
   }
 }
+```
+
+#soon to be added
 
 
 
