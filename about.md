@@ -19,299 +19,301 @@
 <h1 id="banner">Banner</h1>
 
 ```
-// Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+  // Copyright 2020 The Flutter team. All rights reserved.
+  // Use of this source code is governed by a BSD-style license that can be
+  // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
+  import 'package:flutter/material.dart';
+  import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 
-enum BannerDemoAction {
-  reset,
-  showMultipleActions,
-  showLeading,
-}
-
-class BannerDemo extends StatefulWidget {
-  const BannerDemo();
-
-  @override
-  _BannerDemoState createState() => _BannerDemoState();
-}
-
-class _BannerDemoState extends State<BannerDemo> {
-  static const _itemCount = 20;
-  var _displayBanner = true;
-  var _showMultipleActions = true;
-  var _showLeading = true;
-
-  void handleDemoAction(BannerDemoAction action) {
-    setState(() {
-      switch (action) {
-        case BannerDemoAction.reset:
-          _displayBanner = true;
-          _showMultipleActions = true;
-          _showLeading = true;
-          break;
-        case BannerDemoAction.showMultipleActions:
-          _showMultipleActions = !_showMultipleActions;
-          break;
-        case BannerDemoAction.showLeading:
-          _showLeading = !_showLeading;
-          break;
-      }
-    });
+  enum BannerDemoAction {
+    reset,
+    showMultipleActions,
+    showLeading,
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final banner = MaterialBanner(
-      content: Text(GalleryLocalizations.of(context).bannerDemoText),
-      leading: _showLeading
-          ? CircleAvatar(
-              child: Icon(Icons.access_alarm, color: colorScheme.onPrimary),
-              backgroundColor: colorScheme.primary,
-            )
-          : null,
-      actions: [
-        FlatButton(
-          child: Text(GalleryLocalizations.of(context).signIn),
-          onPressed: () {
-            setState(() {
-              _displayBanner = false;
-            });
-          },
-        ),
-        if (_showMultipleActions)
+  class BannerDemo extends StatefulWidget {
+    const BannerDemo();
+
+    @override
+    _BannerDemoState createState() => _BannerDemoState();
+  }
+
+  class _BannerDemoState extends State<BannerDemo> {
+    static const _itemCount = 20;
+    var _displayBanner = true;
+    var _showMultipleActions = true;
+    var _showLeading = true;
+
+    void handleDemoAction(BannerDemoAction action) {
+      setState(() {
+        switch (action) {
+          case BannerDemoAction.reset:
+            _displayBanner = true;
+            _showMultipleActions = true;
+            _showLeading = true;
+            break;
+          case BannerDemoAction.showMultipleActions:
+            _showMultipleActions = !_showMultipleActions;
+            break;
+          case BannerDemoAction.showLeading:
+            _showLeading = !_showLeading;
+            break;
+        }
+      });
+    }
+
+    @override
+    Widget build(BuildContext context) {
+      final colorScheme = Theme.of(context).colorScheme;
+      final banner = MaterialBanner(
+        content: Text(GalleryLocalizations.of(context).bannerDemoText),
+        leading: _showLeading
+            ? CircleAvatar(
+                child: Icon(Icons.access_alarm, color: colorScheme.onPrimary),
+                backgroundColor: colorScheme.primary,
+              )
+            : null,
+        actions: [
           FlatButton(
-            child: Text(GalleryLocalizations.of(context).dismiss),
+            child: Text(GalleryLocalizations.of(context).signIn),
             onPressed: () {
               setState(() {
                 _displayBanner = false;
               });
             },
           ),
-      ],
-      backgroundColor: colorScheme.background,
-    );
-
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(GalleryLocalizations.of(context).demoBannerTitle),
-        actions: [
-          PopupMenuButton<BannerDemoAction>(
-            onSelected: handleDemoAction,
-            itemBuilder: (context) => <PopupMenuEntry<BannerDemoAction>>[
-              PopupMenuItem<BannerDemoAction>(
-                value: BannerDemoAction.reset,
-                child:
-                    Text(GalleryLocalizations.of(context).bannerDemoResetText),
-              ),
-              const PopupMenuDivider(),
-              CheckedPopupMenuItem<BannerDemoAction>(
-                value: BannerDemoAction.showMultipleActions,
-                checked: _showMultipleActions,
-                child: Text(
-                    GalleryLocalizations.of(context).bannerDemoMultipleText),
-              ),
-              CheckedPopupMenuItem<BannerDemoAction>(
-                value: BannerDemoAction.showLeading,
-                checked: _showLeading,
-                child: Text(
-                    GalleryLocalizations.of(context).bannerDemoLeadingText),
-              ),
-            ],
-          ),
+          if (_showMultipleActions)
+            FlatButton(
+              child: Text(GalleryLocalizations.of(context).dismiss),
+              onPressed: () {
+                setState(() {
+                  _displayBanner = false;
+                });
+              },
+            ),
         ],
-      ),
-      body: ListView.builder(
-          itemCount: _displayBanner ? _itemCount + 1 : _itemCount,
-          itemBuilder: (context, index) {
-            if (index == 0 && _displayBanner) {
-              return banner;
-            }
-            return ListTile(
-              title: Text(
-                GalleryLocalizations.of(context)
-                    .starterAppDrawerItem(_displayBanner ? index : index + 1),
-              ),
-            );
-          }),
-    );
-  }
-}
-```
-<h1 id="bottom_appbar">Bottom App Bar</h1>
-```
-// Copyright 2019 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+        backgroundColor: colorScheme.background,
+      );
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
-
-class BottomAppBarDemo extends StatefulWidget {
-  const BottomAppBarDemo();
-
-  @override
-  State createState() => _BottomAppBarDemoState();
-}
-
-class _BottomAppBarDemoState extends State<BottomAppBarDemo> {
-  var _showFab = true;
-  var _showNotch = true;
-  var _fabLocation = FloatingActionButtonLocation.endDocked;
-
-  void _onShowNotchChanged(bool value) {
-    setState(() {
-      _showNotch = value;
-    });
-  }
-
-  void _onShowFabChanged(bool value) {
-    setState(() {
-      _showFab = value;
-    });
-  }
-
-  void _onFabLocationChanged(FloatingActionButtonLocation value) {
-    setState(() {
-      _fabLocation = value;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(GalleryLocalizations.of(context).demoBottomAppBarTitle),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.only(bottom: 88),
-        children: [
-          SwitchListTile(
-            title: Text(
-              GalleryLocalizations.of(context).demoFloatingButtonTitle,
-            ),
-            value: _showFab,
-            onChanged: _onShowFabChanged,
-          ),
-          SwitchListTile(
-            title: Text(GalleryLocalizations.of(context).bottomAppBarNotch),
-            value: _showNotch,
-            onChanged: _onShowNotchChanged,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Text(GalleryLocalizations.of(context).bottomAppBarPosition),
-          ),
-          RadioListTile<FloatingActionButtonLocation>(
-            title: Text(
-              GalleryLocalizations.of(context).bottomAppBarPositionDockedEnd,
-            ),
-            value: FloatingActionButtonLocation.endDocked,
-            groupValue: _fabLocation,
-            onChanged: _onFabLocationChanged,
-          ),
-          RadioListTile<FloatingActionButtonLocation>(
-            title: Text(
-              GalleryLocalizations.of(context).bottomAppBarPositionDockedCenter,
-            ),
-            value: FloatingActionButtonLocation.centerDocked,
-            groupValue: _fabLocation,
-            onChanged: _onFabLocationChanged,
-          ),
-          RadioListTile<FloatingActionButtonLocation>(
-            title: Text(
-              GalleryLocalizations.of(context).bottomAppBarPositionFloatingEnd,
-            ),
-            value: FloatingActionButtonLocation.endFloat,
-            groupValue: _fabLocation,
-            onChanged: _onFabLocationChanged,
-          ),
-          RadioListTile<FloatingActionButtonLocation>(
-            title: Text(
-              GalleryLocalizations.of(context)
-                  .bottomAppBarPositionFloatingCenter,
-            ),
-            value: FloatingActionButtonLocation.centerFloat,
-            groupValue: _fabLocation,
-            onChanged: _onFabLocationChanged,
-          ),
-        ],
-      ),
-      floatingActionButton: _showFab
-          ? FloatingActionButton(
-              onPressed: () {
-                print('Floating action button pressed');
-              },
-              child: const Icon(Icons.add),
-              tooltip: GalleryLocalizations.of(context).buttonTextCreate,
-            )
-          : null,
-      floatingActionButtonLocation: _fabLocation,
-      bottomNavigationBar: _DemoBottomAppBar(
-        fabLocation: _fabLocation,
-        shape: _showNotch ? const CircularNotchedRectangle() : null,
-      ),
-    );
-  }
-}
-
-class _DemoBottomAppBar extends StatelessWidget {
-  const _DemoBottomAppBar({
-    this.fabLocation,
-    this.shape,
-  });
-
-  final FloatingActionButtonLocation fabLocation;
-  final NotchedShape shape;
-
-  static final centerLocations = <FloatingActionButtonLocation>[
-    FloatingActionButtonLocation.centerDocked,
-    FloatingActionButtonLocation.centerFloat,
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomAppBar(
-      shape: shape,
-      child: IconTheme(
-        data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-        child: Row(
-          children: [
-            IconButton(
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                print('Menu button pressed');
-              },
-            ),
-            if (centerLocations.contains(fabLocation)) const Spacer(),
-            IconButton(
-              tooltip: GalleryLocalizations.of(context).starterAppTooltipSearch,
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                print('Search button pressed');
-              },
-            ),
-            IconButton(
-              tooltip:
-                  GalleryLocalizations.of(context).starterAppTooltipFavorite,
-              icon: const Icon(Icons.favorite),
-              onPressed: () {
-                print('Favorite button pressed');
-              },
+      return Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(GalleryLocalizations.of(context).demoBannerTitle),
+          actions: [
+            PopupMenuButton<BannerDemoAction>(
+              onSelected: handleDemoAction,
+              itemBuilder: (context) => <PopupMenuEntry<BannerDemoAction>>[
+                PopupMenuItem<BannerDemoAction>(
+                  value: BannerDemoAction.reset,
+                  child:
+                      Text(GalleryLocalizations.of(context).bannerDemoResetText),
+                ),
+                const PopupMenuDivider(),
+                CheckedPopupMenuItem<BannerDemoAction>(
+                  value: BannerDemoAction.showMultipleActions,
+                  checked: _showMultipleActions,
+                  child: Text(
+                      GalleryLocalizations.of(context).bannerDemoMultipleText),
+                ),
+                CheckedPopupMenuItem<BannerDemoAction>(
+                  value: BannerDemoAction.showLeading,
+                  checked: _showLeading,
+                  child: Text(
+                      GalleryLocalizations.of(context).bannerDemoLeadingText),
+                ),
+              ],
             ),
           ],
         ),
-      ),
-    );
+        body: ListView.builder(
+            itemCount: _displayBanner ? _itemCount + 1 : _itemCount,
+            itemBuilder: (context, index) {
+              if (index == 0 && _displayBanner) {
+                return banner;
+              }
+              return ListTile(
+                title: Text(
+                  GalleryLocalizations.of(context)
+                      .starterAppDrawerItem(_displayBanner ? index : index + 1),
+                ),
+              );
+            }),
+      );
+    }
   }
-}
+```
+
+<h1 id="bottom_appbar">Bottom App Bar</h1>
+
+```
+    // Copyright 2019 The Flutter team. All rights reserved.
+    // Use of this source code is governed by a BSD-style license that can be
+    // found in the LICENSE file.
+
+    import 'package:flutter/material.dart';
+    import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
+
+    class BottomAppBarDemo extends StatefulWidget {
+      const BottomAppBarDemo();
+
+      @override
+      State createState() => _BottomAppBarDemoState();
+    }
+
+    class _BottomAppBarDemoState extends State<BottomAppBarDemo> {
+      var _showFab = true;
+      var _showNotch = true;
+      var _fabLocation = FloatingActionButtonLocation.endDocked;
+
+      void _onShowNotchChanged(bool value) {
+        setState(() {
+          _showNotch = value;
+        });
+      }
+
+      void _onShowFabChanged(bool value) {
+        setState(() {
+          _showFab = value;
+        });
+      }
+
+      void _onFabLocationChanged(FloatingActionButtonLocation value) {
+        setState(() {
+          _fabLocation = value;
+        });
+      }
+
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            title: Text(GalleryLocalizations.of(context).demoBottomAppBarTitle),
+          ),
+          body: ListView(
+            padding: const EdgeInsets.only(bottom: 88),
+            children: [
+              SwitchListTile(
+                title: Text(
+                  GalleryLocalizations.of(context).demoFloatingButtonTitle,
+                ),
+                value: _showFab,
+                onChanged: _onShowFabChanged,
+              ),
+              SwitchListTile(
+                title: Text(GalleryLocalizations.of(context).bottomAppBarNotch),
+                value: _showNotch,
+                onChanged: _onShowNotchChanged,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(GalleryLocalizations.of(context).bottomAppBarPosition),
+              ),
+              RadioListTile<FloatingActionButtonLocation>(
+                title: Text(
+                  GalleryLocalizations.of(context).bottomAppBarPositionDockedEnd,
+                ),
+                value: FloatingActionButtonLocation.endDocked,
+                groupValue: _fabLocation,
+                onChanged: _onFabLocationChanged,
+              ),
+              RadioListTile<FloatingActionButtonLocation>(
+                title: Text(
+                  GalleryLocalizations.of(context).bottomAppBarPositionDockedCenter,
+                ),
+                value: FloatingActionButtonLocation.centerDocked,
+                groupValue: _fabLocation,
+                onChanged: _onFabLocationChanged,
+              ),
+              RadioListTile<FloatingActionButtonLocation>(
+                title: Text(
+                  GalleryLocalizations.of(context).bottomAppBarPositionFloatingEnd,
+                ),
+                value: FloatingActionButtonLocation.endFloat,
+                groupValue: _fabLocation,
+                onChanged: _onFabLocationChanged,
+              ),
+              RadioListTile<FloatingActionButtonLocation>(
+                title: Text(
+                  GalleryLocalizations.of(context)
+                      .bottomAppBarPositionFloatingCenter,
+                ),
+                value: FloatingActionButtonLocation.centerFloat,
+                groupValue: _fabLocation,
+                onChanged: _onFabLocationChanged,
+              ),
+            ],
+          ),
+          floatingActionButton: _showFab
+              ? FloatingActionButton(
+                  onPressed: () {
+                    print('Floating action button pressed');
+                  },
+                  child: const Icon(Icons.add),
+                  tooltip: GalleryLocalizations.of(context).buttonTextCreate,
+                )
+              : null,
+          floatingActionButtonLocation: _fabLocation,
+          bottomNavigationBar: _DemoBottomAppBar(
+            fabLocation: _fabLocation,
+            shape: _showNotch ? const CircularNotchedRectangle() : null,
+          ),
+        );
+      }
+    }
+
+    class _DemoBottomAppBar extends StatelessWidget {
+      const _DemoBottomAppBar({
+        this.fabLocation,
+        this.shape,
+      });
+
+      final FloatingActionButtonLocation fabLocation;
+      final NotchedShape shape;
+
+      static final centerLocations = <FloatingActionButtonLocation>[
+        FloatingActionButtonLocation.centerDocked,
+        FloatingActionButtonLocation.centerFloat,
+      ];
+
+      @override
+      Widget build(BuildContext context) {
+        return BottomAppBar(
+          shape: shape,
+          child: IconTheme(
+            data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+            child: Row(
+              children: [
+                IconButton(
+                  tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    print('Menu button pressed');
+                  },
+                ),
+                if (centerLocations.contains(fabLocation)) const Spacer(),
+                IconButton(
+                  tooltip: GalleryLocalizations.of(context).starterAppTooltipSearch,
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    print('Search button pressed');
+                  },
+                ),
+                IconButton(
+                  tooltip:
+                      GalleryLocalizations.of(context).starterAppTooltipFavorite,
+                  icon: const Icon(Icons.favorite),
+                  onPressed: () {
+                    print('Favorite button pressed');
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+    }
 ```
 
 <h1 id="bottom_navigation">Bottom Navigation</h1>
@@ -476,7 +478,10 @@ class _NavigationDestinationView extends StatelessWidget {
   }
 }
 ```
+
 <h1 id="bottom_sheet">Bottom Sheet</h1>
+
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -571,7 +576,10 @@ class _PersistentBottomSheetDemoState
   }
 }
 ```
+
 <h1 id="buttons">Butons</h1>
+
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -605,6 +613,7 @@ class _FlatButtonDemo extends StatelessWidget {
 }
 ```
 <h1 id="cards">Cards</h1>
+
 ```
 // Copyright 2020 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -1015,7 +1024,9 @@ class _CardsDemoState extends State<CardsDemo> {
   }
 }
 ```
+
 <h1 id="chips">Chips</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -1040,7 +1051,9 @@ class _ActionChipDemo extends StatelessWidget {
   }
 }
 ```
+
 <h1 id="data_tables">Data tables</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -1593,7 +1606,9 @@ class _DessertDataSource extends DataTableSource {
   }
 }
 ```
+
 <h1 id="dialogs">Dialogs</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -1876,7 +1891,9 @@ class _FullScreenDialogDemo extends StatelessWidget {
   }
 }
 ```
+
 <h1 id="gridlist">Gridlist</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -2074,7 +2091,9 @@ class _GridDemoPhotoItem extends StatelessWidget {
   }
 }
 ```
+
 <h1 id="list">List</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -2123,7 +2142,9 @@ class ListDemo extends StatelessWidget {
   }
 }
 ```
+
 <h1 id="menu">Menu</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -2176,7 +2197,9 @@ class _ContextMenuDemo extends StatelessWidget {
   }
 }
 ```
+
 <h1 id="pickers">Pickers</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -2286,7 +2309,9 @@ class _PickerDemoState extends State<PickerDemo> {
   }
 }
 ```
+
 <h1 id="progress_indicators">Progress Indicators</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -2399,7 +2424,9 @@ class _ProgressIndicatorDemoState extends State<ProgressIndicatorDemo>
   }
 }
 ```
+
 <h1 id="selection_controls">Selection controls</h1>
+
 ```
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
