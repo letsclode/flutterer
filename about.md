@@ -313,6 +313,7 @@ class _DemoBottomAppBar extends StatelessWidget {
   }
 }
 ```
+
 <h1 id="bottom_navigation">Bottom Navigation</h1>
 
 ```
