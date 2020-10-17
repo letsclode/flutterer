@@ -9,9 +9,9 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
+```python
 Syntax highlighted code block
-
+  print("heelo world)
 # Header 1
 ## Header 2
 ### Header 3

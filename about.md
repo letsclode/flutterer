@@ -18,7 +18,7 @@
 
 <h1 id="banner">Banner</h1>
 
-```
+```dart
   // Copyright 2020 The Flutter team. All rights reserved.
   // Use of this source code is governed by a BSD-style license that can be
   // found in the LICENSE file.
@@ -146,7 +146,7 @@
 
 <h1 id="bottom_appbar">Bottom App Bar</h1>
 
-```
+```dart
     // Copyright 2019 The Flutter team. All rights reserved.
     // Use of this source code is governed by a BSD-style license that can be
     // found in the LICENSE file.
@@ -318,7 +318,7 @@
 
 <h1 id="bottom_navigation">Bottom Navigation</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -482,7 +482,7 @@ class _NavigationDestinationView extends StatelessWidget {
 <h1 id="bottom_sheet">Bottom Sheet</h1>
 
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -580,7 +580,7 @@ class _PersistentBottomSheetDemoState
 <h1 id="buttons">Butons</h1>
 
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -614,7 +614,7 @@ class _FlatButtonDemo extends StatelessWidget {
 ```
 <h1 id="cards">Cards</h1>
 
-```
+```dart
 // Copyright 2020 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1027,7 +1027,7 @@ class _CardsDemoState extends State<CardsDemo> {
 
 <h1 id="chips">Chips</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1054,7 +1054,7 @@ class _ActionChipDemo extends StatelessWidget {
 
 <h1 id="data_tables">Data tables</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1609,7 +1609,7 @@ class _DessertDataSource extends DataTableSource {
 
 <h1 id="dialogs">Dialogs</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1894,7 +1894,7 @@ class _FullScreenDialogDemo extends StatelessWidget {
 
 <h1 id="gridlist">Gridlist</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2094,7 +2094,7 @@ class _GridDemoPhotoItem extends StatelessWidget {
 
 <h1 id="list">List</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2145,7 +2145,7 @@ class ListDemo extends StatelessWidget {
 
 <h1 id="menu">Menu</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2200,7 +2200,7 @@ class _ContextMenuDemo extends StatelessWidget {
 
 <h1 id="pickers">Pickers</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2312,7 +2312,7 @@ class _PickerDemoState extends State<PickerDemo> {
 
 <h1 id="progress_indicators">Progress Indicators</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2427,7 +2427,7 @@ class _ProgressIndicatorDemoState extends State<ProgressIndicatorDemo>
 
 <h1 id="selection_controls">Selection controls</h1>
 
-```
+```dart
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
