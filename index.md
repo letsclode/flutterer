@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 ---
 layout: page
 title: About
 ---
 ## Welcome to GitHub Flutter Page
+=======
+## Flutter Helper
+>>>>>>> 4d8ef465c01ecf22bedde79648206cd943029b13
 
 You can use the [editor on GitHub](https://github.com/letsclode/flutterer/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
