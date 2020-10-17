@@ -1,6 +1,6 @@
 # List Of Widgets
 
-* <a href="#banner">Appbar</a>
+* <a href="#banner">Banner</a>
 * <a href="#bottom_appbar">Bottom App Bar</a>
 * <a href="#bottom_navigation">Bottom Navigation</a>
 * <a href="#bottom_sheet">Bottom Sheet</a>
