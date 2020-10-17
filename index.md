@@ -1,9 +1,5 @@
----
-layout: page
-title: About
----
 ## Welcome to GitHub Flutter Page
-=======
+[About](https://letsclode.github.io/flutterer/about)
 
 You can use the [editor on GitHub](https://github.com/letsclode/flutterer/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
