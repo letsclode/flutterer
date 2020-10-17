@@ -2,7 +2,7 @@
 this how it work you can link by not adding md at the last name of fi
 le
 banner
-`
+```
 // Copyright 2020 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,6 +126,4 @@ class _BannerDemoState extends State<BannerDemo> {
     );
   }
 }
-
-
-`
+```
