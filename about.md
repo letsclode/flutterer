@@ -1,7 +1,11 @@
 # Now I get it
 this how it work you can link by not adding md at the last name of fi
 le
-banner
+
+Go to [App Bar](https://letsclode.github.io/flutterer/about=#:~:text=AppBar)
+
+
+# Banner
 ```
 // Copyright 2020 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -127,7 +131,8 @@ class _BannerDemoState extends State<BannerDemo> {
   }
 }
 ```
-app bar
+
+# App bar 
 
 // Copyright 2019 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
