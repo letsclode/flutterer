@@ -2,7 +2,7 @@
 this how it work you can link by not adding md at the last name of fi
 le
 
-Go to [App Bar](https://letsclode.github.io/flutterer/about=#:~:text=AppBar)
+Go to [App Bar](https://letsclode.github.io/flutterer/about.md=#:~:text=AppBar)
 
 
 # Banner
